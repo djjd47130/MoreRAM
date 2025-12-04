@@ -3,7 +3,7 @@ object frmRAM: TfrmRAM
   Top = 0
   Caption = 'RAM View'
   ClientHeight = 522
-  ClientWidth = 836
+  ClientWidth = 1038
   Color = clBtnFace
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
@@ -12,13 +12,14 @@ object frmRAM: TfrmRAM
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lstRAM: TListView
     Left = 0
     Top = 0
-    Width = 836
+    Width = 1038
     Height = 377
     Align = alTop
     BorderStyle = bsNone

@@ -2,7 +2,7 @@ object frmMain: TfrmMain
   Left = 0
   Top = 0
   Caption = 'More RAM'
-  ClientHeight = 131
+  ClientHeight = 172
   ClientWidth = 520
   Color = clBtnFace
   DoubleBuffered = True
@@ -12,9 +12,10 @@ object frmMain: TfrmMain
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   DesignSize = (
     520
-    131)
+    172)
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -47,7 +48,7 @@ object frmMain: TfrmMain
   end
   object Panel1: TPanel
     Left = 0
-    Top = 95
+    Top = 117
     Width = 520
     Height = 36
     Align = alBottom
@@ -114,5 +115,34 @@ object frmMain: TfrmMain
     PositionToolTip = ptBottom
     TabOrder = 1
     OnChange = tbAmountChange
+  end
+  object Prog: TProgressBar
+    Left = 16
+    Top = 77
+    Width = 490
+    Height = 17
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 2
+    Visible = False
+  end
+  object Stat: TStatusBar
+    Left = 0
+    Top = 153
+    Width = 520
+    Height = 19
+    Panels = <
+      item
+        Text = 'Status: Ready'
+        Width = 50
+      end>
+    ExplicitLeft = 8
+    ExplicitTop = 165
+  end
+  object tmrProgress: TTimer
+    Enabled = False
+    Interval = 50
+    OnTimer = tmrProgressTimer
+    Left = 312
+    Top = 16
   end
 end
