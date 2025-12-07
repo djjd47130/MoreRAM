@@ -1,9 +1,10 @@
 object frmMain: TfrmMain
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'More RAM'
-  ClientHeight = 172
-  ClientWidth = 520
+  ClientHeight = 216
+  ClientWidth = 552
   Color = clBtnFace
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
@@ -13,55 +14,36 @@ object frmMain: TfrmMain
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
-  DesignSize = (
-    520
-    172)
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
-    Left = 16
-    Top = 14
-    Width = 153
-    Height = 16
-    Caption = 'Amount of RAM to add:'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object lblAmount: TLabel
-    Left = 470
-    Top = 11
-    Width = 36
-    Height = 16
-    Alignment = taRightJustify
-    Anchors = [akTop, akRight]
-    Caption = '12 GB'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object Panel1: TPanel
     Left = 0
-    Top = 117
-    Width = 520
-    Height = 36
+    Top = 182
+    Width = 552
+    Height = 34
     Align = alBottom
     TabOrder = 0
-    ExplicitLeft = 3
-    ExplicitTop = 336
-    ExplicitWidth = 772
+    ExplicitTop = 200
+    object lblStatus: TLabel
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 69
+      Height = 26
+      Align = alLeft
+      Caption = 'Status: Ready'
+      Layout = tlCenter
+      ExplicitLeft = 16
+      ExplicitTop = 8
+      ExplicitHeight = 13
+    end
     object JDFontButton1: TJDFontButton
       AlignWithMargins = True
-      Left = 414
+      Left = 446
       Top = 4
       Width = 102
-      Height = 28
+      Height = 26
       Cursor = crHandPoint
       Align = alRight
       DrawStyle = fdTransparent
@@ -97,52 +79,180 @@ object frmMain: TfrmMain
       TabOrder = 0
       Text = 'Add RAM'
       OnClick = JDFontButton1Click
-      ExplicitLeft = 668
-      ExplicitTop = 75
-      ExplicitHeight = 30
+      ExplicitLeft = 388
+      ExplicitTop = 2
+      ExplicitHeight = 28
     end
   end
-  object tbAmount: TTrackBar
-    Left = 16
-    Top = 35
-    Width = 490
-    Height = 45
-    Anchors = [akLeft, akTop, akRight]
-    Max = 128
-    Min = 1
-    Frequency = 5
-    Position = 12
-    PositionToolTip = ptBottom
+  object Panel2: TPanel
+    Left = 0
+    Top = 0
+    Width = 552
+    Height = 73
+    Align = alTop
     TabOrder = 1
-    OnChange = tbAmountChange
+    ExplicitWidth = 730
+    object Panel3: TPanel
+      Left = 1
+      Top = 1
+      Width = 550
+      Height = 24
+      Align = alTop
+      BevelOuter = bvNone
+      TabOrder = 0
+      ExplicitWidth = 599
+      object Label3: TLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 153
+        Height = 18
+        Align = alLeft
+        Caption = 'Amount of RAM to add:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitLeft = 24
+        ExplicitTop = 22
+        ExplicitHeight = 16
+      end
+      object lblAmount: TLabel
+        AlignWithMargins = True
+        Left = 511
+        Top = 3
+        Width = 36
+        Height = 18
+        Align = alRight
+        Alignment = taRightJustify
+        Caption = '12 GB'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitLeft = 563
+        ExplicitTop = 8
+        ExplicitHeight = 16
+      end
+    end
+    object tbAmount: TTrackBar
+      AlignWithMargins = True
+      Left = 4
+      Top = 28
+      Width = 544
+      Height = 45
+      Cursor = crHandPoint
+      Align = alTop
+      Max = 128
+      Min = 1
+      Frequency = 5
+      Position = 12
+      PositionToolTip = ptBottom
+      TabOrder = 1
+      OnChange = tbAmountChange
+      ExplicitLeft = -99
+      ExplicitTop = 33
+      ExplicitWidth = 700
+    end
+  end
+  object Panel4: TPanel
+    Left = 0
+    Top = 73
+    Width = 552
+    Height = 72
+    Align = alTop
+    TabOrder = 2
+    ExplicitWidth = 730
+    object Panel5: TPanel
+      Left = 1
+      Top = 1
+      Width = 550
+      Height = 24
+      Align = alTop
+      BevelOuter = bvNone
+      TabOrder = 0
+      ExplicitLeft = 2
+      ExplicitTop = -2
+      ExplicitWidth = 728
+      object Label2: TLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 79
+        Height = 18
+        Align = alLeft
+        Caption = 'RAM Speed:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitLeft = 16
+        ExplicitTop = 8
+        ExplicitHeight = 16
+      end
+      object lblSpeed: TLabel
+        AlignWithMargins = True
+        Left = 484
+        Top = 3
+        Width = 63
+        Height = 18
+        Align = alRight
+        Alignment = taRightJustify
+        Caption = '3200 MHz'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitLeft = 536
+        ExplicitTop = 8
+        ExplicitHeight = 16
+      end
+    end
+    object tbSpeed: TTrackBar
+      AlignWithMargins = True
+      Left = 4
+      Top = 28
+      Width = 544
+      Height = 45
+      Cursor = crHandPoint
+      Align = alTop
+      Max = 7
+      Min = 1
+      Position = 7
+      TabOrder = 1
+      OnChange = tbSpeedChange
+      ExplicitLeft = -99
+      ExplicitTop = 60
+      ExplicitWidth = 700
+    end
   end
   object Prog: TProgressBar
-    Left = 16
-    Top = 77
-    Width = 490
-    Height = 17
-    Anchors = [akLeft, akTop, akRight]
-    TabOrder = 2
-    Visible = False
-  end
-  object Stat: TStatusBar
-    Left = 0
+    AlignWithMargins = True
+    Left = 8
     Top = 153
-    Width = 520
-    Height = 19
-    Panels = <
-      item
-        Text = 'Status: Ready'
-        Width = 50
-      end>
-    ExplicitLeft = 8
-    ExplicitTop = 165
+    Width = 536
+    Height = 20
+    Margins.Left = 8
+    Margins.Top = 8
+    Margins.Right = 8
+    Margins.Bottom = 8
+    Align = alTop
+    TabOrder = 3
+    Visible = False
   end
   object tmrProgress: TTimer
     Enabled = False
     Interval = 50
     OnTimer = tmrProgressTimer
-    Left = 312
-    Top = 16
+    Left = 152
+    Top = 152
   end
 end
