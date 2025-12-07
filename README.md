@@ -1,7 +1,7 @@
 # More RAM
 Increase your system memory with the click of a button!
 
-<img width="536" height="210" alt="image" src="https://github.com/user-attachments/assets/49519231-837d-40ec-aaed-f947c99de620" />
+<img width="568" height="254" alt="image" src="https://github.com/user-attachments/assets/cf559ba8-298b-4e1e-b332-97a8ad195cc9" />
 
 It's as easy as 1-2-3:
 
