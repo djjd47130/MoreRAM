@@ -10,14 +10,14 @@ uses
 
 type
   TfrmMain = class(TForm)
-    Panel1: TPanel;
-    JDFontButton1: TJDFontButton;
+    btnBottom: TPanel;
+    btnAdd: TJDFontButton;
     tmrProgress: TTimer;
-    Panel2: TPanel;
-    Panel3: TPanel;
+    pAmount: TPanel;
+    pAmountHeader: TPanel;
     Label3: TLabel;
-    Panel4: TPanel;
-    Panel5: TPanel;
+    pSpeed: TPanel;
+    pSpeedHeader: TPanel;
     Label2: TLabel;
     lblAmount: TLabel;
     lblSpeed: TLabel;
@@ -26,7 +26,7 @@ type
     lblStatus: TLabel;
     Prog: TProgressBar;
     procedure tbAmountChange(Sender: TObject);
-    procedure JDFontButton1Click(Sender: TObject);
+    procedure btnAddClick(Sender: TObject);
     procedure tmrProgressTimer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure tbSpeedChange(Sender: TObject);
@@ -50,16 +50,6 @@ begin
   {$ENDIF}
 end;
 
-procedure TfrmMain.JDFontButton1Click(Sender: TObject);
-begin
-  Prog.Max:= 100;
-  Prog.Position:= 0;
-  Prog.Visible:= True;
-  tmrProgress.Enabled:= True;
-  lblStatus.Caption:= 'Status: Adding more RAM...';
-  Application.ProcessMessages;
-end;
-
 procedure TfrmMain.tbAmountChange(Sender: TObject);
 begin
   lblAmount.Caption:= tbAmount.Position.ToString + ' GB';
@@ -78,6 +68,17 @@ begin
   end;
 end;
 
+procedure TfrmMain.btnAddClick(Sender: TObject);
+begin
+  Prog.Max:= 100;
+  Prog.Position:= 0;
+  Prog.Visible:= True;
+  tmrProgress.Interval:= 80;
+  tmrProgress.Enabled:= True;
+  lblStatus.Caption:= 'Status: Adding more RAM...';
+  Application.ProcessMessages;
+end;
+
 procedure TfrmMain.tmrProgressTimer(Sender: TObject);
 begin
   if Prog.Position >= Prog.Max then begin
@@ -89,6 +90,12 @@ begin
     frmRAM.ShowModal;
   end else begin
     Prog.StepBy(1);
+    if Prog.Position >= 60 then
+      lblStatus.Caption:= 'Status: Optimizing RAM...';
+    if Prog.Position >= 80 then begin
+      lblStatus.Caption:= 'Status: Wrapping up...';
+      tmrProgress.Interval:= 200;
+    end;
   end;
 end;
 

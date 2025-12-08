@@ -2,9 +2,10 @@ object frmMain: TfrmMain
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'More RAM'
-  ClientHeight = 216
-  ClientWidth = 552
+  ClientHeight = 237
+  ClientWidth = 580
   Color = clBtnFace
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
@@ -17,14 +18,15 @@ object frmMain: TfrmMain
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Panel1: TPanel
+  object btnBottom: TPanel
     Left = 0
-    Top = 182
-    Width = 552
+    Top = 203
+    Width = 580
     Height = 34
     Align = alBottom
     TabOrder = 0
-    ExplicitTop = 200
+    ExplicitLeft = 3
+    ExplicitTop = 199
     object lblStatus: TLabel
       AlignWithMargins = True
       Left = 4
@@ -34,15 +36,13 @@ object frmMain: TfrmMain
       Align = alLeft
       Caption = 'Status: Ready'
       Layout = tlCenter
-      ExplicitLeft = 16
-      ExplicitTop = 8
       ExplicitHeight = 13
     end
-    object JDFontButton1: TJDFontButton
+    object btnAdd: TJDFontButton
       AlignWithMargins = True
-      Left = 446
+      Left = 460
       Top = 4
-      Width = 102
+      Width = 116
       Height = 26
       Cursor = crHandPoint
       Align = alRight
@@ -53,11 +53,11 @@ object frmMain: TfrmMain
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       Image.AutoSize = False
-      Image.Text = #61537
-      Image.Font.Charset = DEFAULT_CHARSET
+      Image.Text = #57518
+      Image.Font.Charset = ANSI_CHARSET
       Image.Font.Color = clWindowText
-      Image.Font.Height = -21
-      Image.Font.Name = 'FontAwesome'
+      Image.Font.Height = -19
+      Image.Font.Name = 'Segoe UI Symbol'
       Image.Font.Style = []
       Image.Font.Quality = fqAntialiased
       Image.StandardColor = fcGreen
@@ -78,29 +78,27 @@ object frmMain: TfrmMain
       SubTextFont.Style = []
       TabOrder = 0
       Text = 'Add RAM'
-      OnClick = JDFontButton1Click
-      ExplicitLeft = 388
-      ExplicitTop = 2
-      ExplicitHeight = 28
+      OnClick = btnAddClick
+      ExplicitLeft = 461
+      ExplicitTop = -4
     end
   end
-  object Panel2: TPanel
+  object pAmount: TPanel
     Left = 0
     Top = 0
-    Width = 552
-    Height = 73
+    Width = 580
+    Height = 80
     Align = alTop
+    BevelOuter = bvNone
     TabOrder = 1
-    ExplicitWidth = 730
-    object Panel3: TPanel
-      Left = 1
-      Top = 1
-      Width = 550
+    object pAmountHeader: TPanel
+      Left = 0
+      Top = 0
+      Width = 580
       Height = 24
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 599
       object Label3: TLabel
         AlignWithMargins = True
         Left = 3
@@ -115,13 +113,11 @@ object frmMain: TfrmMain
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitLeft = 24
-        ExplicitTop = 22
         ExplicitHeight = 16
       end
       object lblAmount: TLabel
         AlignWithMargins = True
-        Left = 511
+        Left = 541
         Top = 3
         Width = 36
         Height = 18
@@ -134,16 +130,14 @@ object frmMain: TfrmMain
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitLeft = 563
-        ExplicitTop = 8
         ExplicitHeight = 16
       end
     end
     object tbAmount: TTrackBar
       AlignWithMargins = True
-      Left = 4
-      Top = 28
-      Width = 544
+      Left = 3
+      Top = 27
+      Width = 574
       Height = 45
       Cursor = crHandPoint
       Align = alTop
@@ -154,30 +148,24 @@ object frmMain: TfrmMain
       PositionToolTip = ptBottom
       TabOrder = 1
       OnChange = tbAmountChange
-      ExplicitLeft = -99
-      ExplicitTop = 33
-      ExplicitWidth = 700
     end
   end
-  object Panel4: TPanel
+  object pSpeed: TPanel
     Left = 0
-    Top = 73
-    Width = 552
-    Height = 72
+    Top = 80
+    Width = 580
+    Height = 80
     Align = alTop
+    BevelOuter = bvNone
     TabOrder = 2
-    ExplicitWidth = 730
-    object Panel5: TPanel
-      Left = 1
-      Top = 1
-      Width = 550
+    object pSpeedHeader: TPanel
+      Left = 0
+      Top = 0
+      Width = 580
       Height = 24
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitLeft = 2
-      ExplicitTop = -2
-      ExplicitWidth = 728
       object Label2: TLabel
         AlignWithMargins = True
         Left = 3
@@ -192,13 +180,11 @@ object frmMain: TfrmMain
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitLeft = 16
-        ExplicitTop = 8
         ExplicitHeight = 16
       end
       object lblSpeed: TLabel
         AlignWithMargins = True
-        Left = 484
+        Left = 514
         Top = 3
         Width = 63
         Height = 18
@@ -211,16 +197,14 @@ object frmMain: TfrmMain
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitLeft = 536
-        ExplicitTop = 8
         ExplicitHeight = 16
       end
     end
     object tbSpeed: TTrackBar
       AlignWithMargins = True
-      Left = 4
-      Top = 28
-      Width = 544
+      Left = 3
+      Top = 27
+      Width = 574
       Height = 45
       Cursor = crHandPoint
       Align = alTop
@@ -229,28 +213,26 @@ object frmMain: TfrmMain
       Position = 7
       TabOrder = 1
       OnChange = tbSpeedChange
-      ExplicitLeft = -99
-      ExplicitTop = 60
-      ExplicitWidth = 700
     end
   end
   object Prog: TProgressBar
     AlignWithMargins = True
     Left = 8
-    Top = 153
-    Width = 536
-    Height = 20
+    Top = 168
+    Width = 564
+    Height = 27
     Margins.Left = 8
     Margins.Top = 8
     Margins.Right = 8
     Margins.Bottom = 8
-    Align = alTop
+    Align = alClient
     TabOrder = 3
     Visible = False
+    ExplicitHeight = 20
   end
   object tmrProgress: TTimer
     Enabled = False
-    Interval = 50
+    Interval = 80
     OnTimer = tmrProgressTimer
     Left = 152
     Top = 152
