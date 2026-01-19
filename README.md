@@ -1,5 +1,5 @@
 # More RAM
-Increase your system memory with the click of a button!
+Increase your RAM with the click of a button!
 
 <img width="568" height="254" alt="image" src="https://github.com/user-attachments/assets/cf559ba8-298b-4e1e-b332-97a8ad195cc9" />
 
